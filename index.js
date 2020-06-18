@@ -1,40 +1,35 @@
-function doAdd()
+$(document).ready(function() {
+
+    $('#btnAdd').css({fontWeight:'bold'});
+    $('#btnSub').css({fontWeight:'bold'});
+    $('#btnMulti').css({fontWeight:'bold'});
+    $('#btnDiv').css({fontWeight:'bold'});
+})
+
+$(function(){
+    $('#btnAdd').on('click', function() {
+        result = retrieveValues();
+        $('#lblAnswer').text(parseInt(result[0])+parseInt(result[1]));
+    });
+    $('#btnSub').on('click', function() {
+        result = retrieveValues();
+        $('#lblAnswer').text(result[0]-result[1]);
+    });
+    $('#btnMulti').on('click', function() {
+        result = retrieveValues();
+        $('#lblAnswer').text(result[0]*result[1]);
+    });
+    $('#btnDiv').on('click', function() {
+        result = retrieveValues();
+        var ans = result[0] / result[1];
+        ans += result[1] % result[0];
+        $('#lblAnswer').text(ans);
+    });
+})
+
+function retrieveValues()
 {
-    var input1 = document.getElementById("tb1").value;
-    var input2 = document.getElementById("tb2").value;
-
-    var ans = parseInt(input1) + parseInt(input2);
-
-    document.getElementById('lblAnswer').innerHTML = ans;
-}
-
-function doSubtract()
-{
-    var input1 = document.getElementById("tb1").value;
-    var input2 = document.getElementById("tb2").value;
-
-    var ans = parseInt(input1) - parseInt(input2);
-
-    document.getElementById('lblAnswer').innerHTML = ans;
-}
-
-function doMultiply()
-{
-    var input1 = document.getElementById("tb1").value;
-    var input2 = document.getElementById("tb2").value;
-
-    var ans = input1 * input2;
-
-    document.getElementById('lblAnswer').innerHTML = ans;
-}
-
-function doDivide()
-{
-    var input1 = document.getElementById("tb1").value;
-    var input2 = document.getElementById("tb2").value;
-
-    var ans = input1 / input2;
-    ans += input2 % input1;
-
-    document.getElementById('lblAnswer').innerHTML = ans;
+    var input1 = $("#tb1").val();
+    var input2 = $("#tb2").val();
+    return [input1, input2];
 }

@@ -12,16 +12,17 @@
     <input id = "tb1"> Enter a value </input><br>
     <input id = "tb2"> Enter another value </input><br>
 
-    <button onclick="doAdd()"> Add </button>
-    <button onclick="doSubtract()"> Subtract </button>
-    <button onclick="doMultiply()"> Multiply </button>
-    <button onclick="doDivide()"> Divide </button>
+    <button id = "btnAdd"> Add </button>
+    <button onclick="doSubtract()" id = "btnSub"> Subtract </button>
+    <button onclick="doMultiply()" id = "btnMulti"> Multiply </button>
+    <button onclick="doDivide()" id = "btnDiv"> Divide </button>
 
     <br>
 
     <label>Answer: </label>
     <label id = "lblAnswer"></label>
 
+    <script src="jquery.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
